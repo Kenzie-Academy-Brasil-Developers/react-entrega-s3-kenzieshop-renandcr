@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-const CartTotalStyle = styled.section`
+const CartTotalStyle = styled.div`
+  margin-bottom: 15px;
   width: 250px;
   height: 250px;
   border-radius: 0 0 4px;
-  margin-left: 90px;
   padding-bottom: 25px;
   border-radius: 4px;
   background-color: #edf2f4;
@@ -32,8 +32,6 @@ const CartTotalStyle = styled.section`
   }
   span {
     font-size: 15px;
-    color: #ffffff;
-    color: #343a40;
     color: #495057;
     font-weight: 600;
   }

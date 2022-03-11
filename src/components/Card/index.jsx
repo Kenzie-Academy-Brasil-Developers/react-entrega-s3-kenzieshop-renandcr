@@ -1,4 +1,3 @@
-// import UmImg from "../../assets/img/um.jpg";
 import CardStyle from "./styled";
 import DefaultStyleButton from "../Button/styled";
 

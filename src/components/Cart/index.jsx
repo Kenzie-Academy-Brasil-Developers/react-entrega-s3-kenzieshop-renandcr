@@ -1,9 +1,8 @@
 import CartStyle from "./styled";
+import { ImBin } from "react-icons/im";
 const Cart = ({ current, functionRemoveProduct }) => {
   return (
     <CartStyle>
-      {/* <div className="div-cart-img">
-      </div> */}
       <img src={current.img} alt="Relógio" />
       <div className="div-cart-description">
         <h2>{current.description}</h2>
@@ -13,9 +12,14 @@ const Cart = ({ current, functionRemoveProduct }) => {
         <span
           className="cart-romove"
           onClick={() => functionRemoveProduct(current.id)}
+          icon={ImBin}
         >
           Remover do carrinho
         </span>
+        <ImBin
+          className="icon-lixeira"
+          onClick={() => functionRemoveProduct(current.id)}
+        />
       </div>
     </CartStyle>
   );

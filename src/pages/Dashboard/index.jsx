@@ -1,5 +1,6 @@
 import Card from "../../components/Card/index";
 import DisplayCardSectionStyles from "./styled";
+import { toast } from "react-toastify";
 
 import { useSelector, useDispatch } from "react-redux";
 import { addProduct } from "../../store/modules/cart/action";
@@ -16,7 +17,7 @@ const Dashboard = () => {
     );
     findProductCart === undefined
       ? dispatch(addProduct(findProduct))
-      : console.log("Esse produto já está no carrinho");
+      : toast.error("Esse produto já está no carrinho");
   };
   return (
     <DisplayCardSectionStyles>

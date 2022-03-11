@@ -3,9 +3,10 @@ import CartTotalStyle from "./styled";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import { useEffect } from "react";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useHistory } from "react-router-dom";
+import { BsHandbag } from "react-icons/bs";
 
-const CartTotal = ({ current }) => {
+const CartTotal = () => {
   const [total, setTotal] = useState(0);
   const [amount, setAmount] = useState(0);
 
@@ -20,7 +21,6 @@ const CartTotal = ({ current }) => {
     setAmount(amount);
   }, [productCart]);
 
-  console.log(total);
   return (
     <CartTotalStyle>
       <div className="div-cart-title">
@@ -30,8 +30,12 @@ const CartTotal = ({ current }) => {
         <span>{amount} unidades</span>
         <span className="total-price">R$ {total}</span>
       </div>
-      <span className="bye-continue" onClick={() => history.push("/")}>
-        Continuar comprando
+      <span
+        className="bye-continue"
+        onClick={() => history.push("/")}
+        icon={BsHandbag}
+      >
+        <BsHandbag /> Continuar comprando
       </span>
       <DefaultStyleButton>Finalizar pedido</DefaultStyleButton>
     </CartTotalStyle>

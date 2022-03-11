@@ -11,9 +11,16 @@ const CardStyle = styled.li`
   box-sizing: border-box;
   border-radius: 4px;
   background-color: var(--color-primary);
-  box-shadow: 0 4px 32px -12px black;
-  box-shadow: 0 4px 34px -15px #6c757d;
   box-shadow: 0 4px 34px -12px #343a40;
+  @media (min-width: 1500px) {
+    margin: 10px 20px 40px 20px;
+  }
+  @media (min-width: 1600px) {
+    margin: 10px 30px 40px 30px;
+  }
+  @media (min-width: 1700px) {
+    margin: 10px 40px 40px 40px;
+  }
   img {
     cursor: pointer;
     max-width: 100%;
@@ -53,22 +60,3 @@ const CardStyle = styled.li`
   }
 `;
 export default CardStyle;
-
-/* background-color: #f3caa8;
-  background-color: #4ea8de;
-  background-color: #89c2d9;
-  background-color: #caf0f8;
-  background-color: #edf6f9;
-  background-color: #caf0f8;
-  background-color: #a9d6e5;
-  background-color: #a3cef1; */
-
-/* color: #ff0054;
-    color: #f45b69; */
-
-/* color: #114b5f;
-    color: #028090;
-    color: #114b5f;
-    color: #1768ac;
-    color: #ff0054;
-    color: #f45b69; */

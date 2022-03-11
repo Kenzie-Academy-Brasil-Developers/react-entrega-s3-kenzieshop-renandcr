@@ -1,7 +1,4 @@
-import Header from "../components/Header/index";
 import { Route, Switch } from "react-router-dom";
-import Card from "../components/Card/index";
-import Cart from "../components/Cart";
 import Dashboard from "../pages/Dashboard";
 import CartPage from "../pages/CartPage";
 

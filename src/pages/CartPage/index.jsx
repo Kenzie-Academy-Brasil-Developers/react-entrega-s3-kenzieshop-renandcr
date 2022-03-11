@@ -7,18 +7,10 @@ import { removeProduct } from "../../store/modules/cart/action";
 const CartPage = () => {
   const productsCart = useSelector((state) => state.cartProducts);
   const dispatch = useDispatch();
-  console.log(productsCart);
 
   const functionRemoveProduct = (newId) => {
-    // const filterProducts = productsCart.filter(
-    //   (current) => current.id !== newId
-    // );
-    // console.log(filterProducts);
-    // dispatch(removeProduct(filterProducts));
-
     const findProduct = productsCart.find((current) => current.id === newId);
     dispatch(removeProduct(findProduct));
-    // console.log(findProduct);
   };
 
   return (
