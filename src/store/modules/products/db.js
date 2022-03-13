@@ -1,4 +1,4 @@
-import Um from "../../../assets/img/um.jpg";
+import Um from "../../../assets/img/newUm.jpg";
 import dois from "../../../assets/img/dois.jpg";
 import tres from "../../../assets/img/três.jpg";
 import quatro from "../../../assets/img/quatro.jpg";
@@ -7,12 +7,13 @@ import seis from "../../../assets/img/seis.jpg";
 import sete from "../../../assets/img/sete.jpg";
 import oito from "../../../assets/img/oito.jpg";
 import nove from "../../../assets/img/nove.jpg";
+import dez from "../../../assets/img/dez.jpg";
 
 const db = [
   {
     id: 1,
-    description: "Relógio Masculino Tommy Hilfiger 179156",
-    price: 6.761,
+    description: "Relógio Masculino Diesel DZ4360",
+    price: 2.349,
     img: Um,
   },
   {
@@ -53,21 +54,21 @@ const db = [
   },
   {
     id: 8,
-    description: "Relógio Masculino Diesel Dz4318",
+    description: "Relógio Masculino Diesel DZ4318",
     price: 3.895,
     img: oito,
   },
   {
     id: 9,
-    description: "Relógio Masculino Diesel Dz4338",
+    description: "Relógio Masculino Diesel DZ4338",
     price: 2.399,
     img: nove,
   },
   {
     id: 10,
-    description: "Relógio Masculino Diesel Dz4338",
-    price: 2.399,
-    img: nove,
+    description: "Relógio Masculino Diesel DZ4282",
+    price: 3.049,
+    img: dez,
   },
 ];
 
