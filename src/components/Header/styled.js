@@ -94,12 +94,35 @@ const HeaderContainer = styled.header`
   }
   li + li {
     margin-left: 40px;
-    @media (max-width: 310px) {
+    @media (max-width: 410px) {
       margin-left: 20px;
+    }
+    @media (max-width: 320px) {
+      margin-left: 13px;
     }
   }
   .header-icons {
     margin-right: 3px;
   }
 `;
+
 export default HeaderContainer;
+
+// const StyledBadge = styled(Badge)(({ theme }) => ({
+//   '& .MuiBadge-badge': {
+//     right: -3,
+//     top: 13,
+//     border: `2px solid ${theme.palette.background.paper}`,
+//     padding: '0 4px',
+//   },
+// }));
+
+// export default function CustomizedBadges() {
+//   return (
+//     <IconButton aria-label="cart">
+//       <StyledBadge badgeContent={4} color="secondary">
+//         <ShoppingCartIcon />
+//       </StyledBadge>
+//     </IconButton>
+//   );
+// }

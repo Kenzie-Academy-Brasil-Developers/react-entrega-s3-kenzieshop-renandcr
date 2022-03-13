@@ -1,6 +1,11 @@
 import CartStyle from "./styled";
 import { ImBin } from "react-icons/im";
-const Cart = ({ current, functionRemoveProduct }) => {
+import { useDispatch } from "react-redux";
+import { removeProductThunk } from "../../store/modules/cart/thunk";
+
+const Cart = ({ current }) => {
+  const dispatch = useDispatch();
+
   return (
     <CartStyle>
       <img src={current.img} alt="Relógio" />
@@ -11,14 +16,13 @@ const Cart = ({ current, functionRemoveProduct }) => {
         <span className="cart-price">R$ {current.price}</span>
         <span
           className="cart-romove"
-          onClick={() => functionRemoveProduct(current.id)}
-          icon={ImBin}
+          onClick={() => dispatch(removeProductThunk(current.id))}
         >
           Remover do carrinho
         </span>
         <ImBin
           className="icon-lixeira"
-          onClick={() => functionRemoveProduct(current.id)}
+          onClick={() => dispatch(removeProductThunk(current.id))}
         />
       </div>
     </CartStyle>

@@ -13,6 +13,16 @@ const CartSectionStyle = styled.section`
     display: flex;
     flex-direction: row;
   }
+  h1 {
+    color: #6c757d;
+    margin: 0 15px 15px 0;
+    @media (max-width: 1000px) {
+      margin: 0 0 15px 0;
+    }
+    @media (max-width: 410px) {
+      font-size: 18px;
+    }
+  }
   ul {
     margin: 0;
     padding: 0;

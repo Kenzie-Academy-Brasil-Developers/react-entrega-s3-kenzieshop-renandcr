@@ -31,5 +31,6 @@ const GlobalStyle = createGlobalStyle`
 
     }
 
-`;
+    `;
+export const secundary = "#f45b69";
 export default GlobalStyle;

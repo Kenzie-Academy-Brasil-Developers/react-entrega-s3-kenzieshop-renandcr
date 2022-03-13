@@ -1,25 +1,25 @@
 import DefaultStyleButton from "../Button/styled";
 import CartTotalStyle from "./styled";
-import { useSelector } from "react-redux";
-import { useState } from "react";
-import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { BsHandbag } from "react-icons/bs";
+import { toast } from "react-toastify";
+import { useSelector } from "react-redux";
 
-const CartTotal = () => {
-  const [total, setTotal] = useState(0);
-  const [amount, setAmount] = useState(0);
-
+const CartTotal = ({ total, amount }) => {
   const history = useHistory();
+  const cartProducts = useSelector((state) => state.cartProducts);
 
-  const productCart = useSelector((state) => state.cartProducts);
+  const finalizeOrder = () => {
+    const user = JSON.parse(localStorage.getItem("@kenzieShop:user")) || null;
 
-  useEffect(() => {
-    const total = productCart.reduce((acc, current) => acc + current.price, 0);
-    setTotal(total.toFixed(3));
-    const amount = productCart.length;
-    setAmount(amount);
-  }, [productCart]);
+    if (cartProducts.length === 0) {
+      toast.error("Você ainda não tem produtos no carrinho");
+    } else if (user == null) {
+      toast.error("Faça o login antes de finalizar o pedido");
+    } else {
+      toast.success("Compra realizado com sucesso");
+    }
+  };
 
   return (
     <CartTotalStyle>
@@ -30,14 +30,12 @@ const CartTotal = () => {
         <span>{amount} unidades</span>
         <span className="total-price">R$ {total}</span>
       </div>
-      <span
-        className="bye-continue"
-        onClick={() => history.push("/")}
-        icon={BsHandbag}
-      >
+      <span className="bye-continue" onClick={() => history.push("/")}>
         <BsHandbag /> Continuar comprando
       </span>
-      <DefaultStyleButton>Finalizar pedido</DefaultStyleButton>
+      <DefaultStyleButton onClick={finalizeOrder}>
+        Finalizar pedido
+      </DefaultStyleButton>
     </CartTotalStyle>
   );
 };
