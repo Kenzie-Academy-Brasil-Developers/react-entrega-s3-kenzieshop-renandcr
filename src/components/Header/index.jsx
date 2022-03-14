@@ -6,8 +6,11 @@ import { MdOutlineArrowBack } from "react-icons/md";
 import Badge from "@mui/material/Badge";
 import { styled } from "@mui/material/styles";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { useSelector } from "react-redux";
 
-const Header = ({ amount }) => {
+const Header = () => {
+  const cartData = useSelector((state) => state.cartProducts);
+
   const StyledBadge = styled(Badge)(({ theme }) => ({
     "& .MuiBadge-badge": {
       display: "flex",
@@ -45,7 +48,11 @@ const Header = ({ amount }) => {
             <MdOutlineArrowBack className="header-icons" /> Voltar
           </li>
           <li onClick={() => history.push("/cart")}>
-            <StyledBadge badgeContent={amount} color="primary" fontSize="small">
+            <StyledBadge
+              badgeContent={cartData.length}
+              color="primary"
+              fontSize="small"
+            >
               <ShoppingCartIcon sx={{ fontSize: 16 }} />
             </StyledBadge>
             Carrinho

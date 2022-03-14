@@ -1,4 +1,4 @@
-import { ADD_PRODUCT, REMOVE_PRODUCT, USER_VALIDATION } from "./actionTypes";
+import { ADD_PRODUCT, REMOVE_PRODUCT } from "./actionTypes";
 const defaultValue =
   JSON.parse(localStorage.getItem("@kenzieShop:product")) || [];
 

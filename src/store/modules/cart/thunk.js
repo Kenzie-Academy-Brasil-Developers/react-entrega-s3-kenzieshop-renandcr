@@ -23,12 +23,12 @@ export const addProductToCart = (newId) => {
       (current) => current.id === newId
     );
 
-    findProductInCart === undefined
-      ? dispatch(addProduct(findSelectedProduct)) &&
-        localStorage.setItem(
-          "@kenzieShop:product",
-          JSON.stringify(cartProducts)
-        )
-      : toast.error("Esse produto já está no carrinho");
+    if (findProductInCart === undefined) {
+      const cartData = [...cartProducts, findSelectedProduct];
+      localStorage.setItem("@kenzieShop:product", JSON.stringify(cartData));
+      dispatch(addProduct(findSelectedProduct));
+    } else {
+      toast.error("Esse produto já está no carrinho");
+    }
   };
 };

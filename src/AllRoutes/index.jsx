@@ -4,14 +4,14 @@ import CartPage from "../pages/CartPage";
 
 import Login from "../components/Login/index";
 
-const AllRoutes = ({ total, amount }) => {
+const AllRoutes = () => {
   return (
     <Switch>
       <Route exact path="/">
         <Dashboard />
       </Route>
       <Route path="/cart">
-        <CartPage total={total} amount={amount} />
+        <CartPage />
       </Route>
       <Route path="/login">
         <Login />

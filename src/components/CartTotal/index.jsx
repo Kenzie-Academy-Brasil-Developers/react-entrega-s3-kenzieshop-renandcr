@@ -5,7 +5,7 @@ import { BsHandbag } from "react-icons/bs";
 import { toast } from "react-toastify";
 import { useSelector } from "react-redux";
 
-const CartTotal = ({ total, amount }) => {
+const CartTotal = () => {
   const history = useHistory();
   const cartProducts = useSelector((state) => state.cartProducts);
 
@@ -21,14 +21,19 @@ const CartTotal = ({ total, amount }) => {
     }
   };
 
+  const totalPrice = cartProducts.reduce(
+    (acc, current) => acc + current.price,
+    0
+  );
+
   return (
     <CartTotalStyle>
       <div className="div-cart-title">
         <h2>Resumo do pedido</h2>
       </div>
       <div>
-        <span>{amount} unidades</span>
-        <span className="total-price">R$ {total}</span>
+        <span>{cartProducts.length} unidades</span>
+        <span className="total-price">R$ {totalPrice.toFixed(3)}</span>
       </div>
       <span className="bye-continue" onClick={() => history.push("/")}>
         <BsHandbag /> Continuar comprando
