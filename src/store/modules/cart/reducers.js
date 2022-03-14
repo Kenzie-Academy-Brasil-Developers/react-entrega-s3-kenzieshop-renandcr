@@ -1,6 +1,8 @@
 import { ADD_PRODUCT, REMOVE_PRODUCT, USER_VALIDATION } from "./actionTypes";
+const defaultValue =
+  JSON.parse(localStorage.getItem("@kenzieShop:product")) || [];
 
-const cartReducer = (state = [], action) => {
+const cartReducer = (state = defaultValue, action) => {
   switch (action.type) {
     case ADD_PRODUCT:
       return [...state, action.product];
