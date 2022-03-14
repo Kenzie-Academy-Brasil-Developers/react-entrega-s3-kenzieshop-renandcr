@@ -11,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
     main {
     display: flex;
     justify-content: center;
+    padding-bottom: 30px;
   }
     button{
         cursor: pointer;
