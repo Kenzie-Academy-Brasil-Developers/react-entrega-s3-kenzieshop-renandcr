@@ -76,6 +76,8 @@ const CartStyle = styled.li`
       font-family: "Roboto";
       border-bottom: 1.5px solid gray;
       :hover {
+        color: #a47e1b;
+        border-bottom: 1.5px solid #a47e1b;
       }
       @media (max-width: 610px) {
         display: none;
